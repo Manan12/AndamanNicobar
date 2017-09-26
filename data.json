@@ -1,0 +1,47 @@
+[
+  {
+    "image": "https://media-cdn.tripadvisor.com/media/photo-s/02/59/36/0a/ross-island.jpg",
+    "name": "Ross Island",
+    "provided": "MV Island Explorer",
+    "duration": 3,
+    "starttime": 8,
+    "location": "Port Blair",
+    "price": 1800,
+    "includes": [
+      {
+        "tickets": "Boat Tickets",
+        "events": "15 min snorkling at North Bay",
+        "duration": 1.5
+      }
+    ],
+    "excludes": [
+      {
+        "lunch": "Lunch / Meals"
+      }
+    ],
+    "note": "Option to select vendor of choice shall be provided in next step."
+  },
+  {
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/94/Buzo.jpg",
+    "name": "Discover Scuba Diving",
+    "provided": "Association of Dive Operators",
+    "duration": 3,
+    "starttime": 8,
+    "endtime": 2,
+    "location": "Port Blair",
+    "price": 3800,
+    "includes": [
+      {
+        "tickets": "Boat Tickets",
+        "events": "15 min snorkling at North Bay",
+        "duration": 1.5
+      }
+    ],
+    "excludes": [
+      {
+        "lunch": "Lunch / Meals"
+      }
+    ],
+    "note": "Option to select vendor of choice shall be provided in next step."
+  }
+]
