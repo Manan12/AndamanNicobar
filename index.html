@@ -10,7 +10,7 @@
 
     </head>
     <body >
-      <div class="col-md-3" >
+      <div class="col-md-2" >
         <h1>LocalGDS</h1>
         <div style="margin-top: 30%">
           <ul class="list-group">
@@ -29,7 +29,7 @@
         </div>
 
       </div>
-      <div class="col-md-9 " ng-controller="mainCtrl">
+      <div class="col-md-10 " ng-controller="mainCtrl">
         <div class="" style="text-align: center; margin-bottom: 20px;">
           <div class="dropdown">
             <button class="btn btn-default search dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -59,7 +59,7 @@
                 <h3>{{info.name}}</h3>
                 <p><strong>Provided by:</strong> {{info.provided}}</p>
                 <span><strong>Duration:</strong> {{info.duration}} hours</span> |
-                <span><strong>Time Slot:</strong> {{info.starttime}} am - {{info.endtime}} pm</span> |
+                <span><strong>Time Slot:</strong> {{info.starttime}} am - {{info.endtime}} pm (multiple trips)</span> |
                 <span><strong>Location:</strong> {{info.location}}</span>
 
 
@@ -96,7 +96,7 @@
                   <div class="price">
                     <h3  class="">Rs {{info.price}}</h3>
                     <h5 ><strike>Rs {{info.originalPrice}}</strike> <span style="color: orange">Discount !</span></h5>
-                    <button ng-class="{btn-danger}" type="button" name="button">{{info.availability}}</button>
+                    <button ng-class="info.availability == 'Book Now'  ? 'btn btn-success' :  'btn btn-danger disabled'" type="button" name="button">{{info.availability}}</button>
                   </div>
 
                 </div>
