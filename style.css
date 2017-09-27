@@ -1,0 +1,33 @@
+body {
+  padding-top: 20px;
+}
+
+.info {
+  margin-top: -26px;
+}
+
+.includes {
+  list-style: none;
+}
+
+.policy {
+  list-style: none;
+  font-size: 12px;
+}
+
+.policy a {
+  text-decoration: none  !important;
+  cursor: pointer;
+}
+
+.search {
+  margin-right: 20px;
+}
+
+.benifits {
+  margin-top: 20px;
+}
+
+.price {
+  margin-left: 42px;
+}

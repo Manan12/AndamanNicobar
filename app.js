@@ -5,4 +5,5 @@ App.controller('mainCtrl', function($scope, $http) {
        .then(function(res){
           $scope.data = res.data;
         });
+
 });

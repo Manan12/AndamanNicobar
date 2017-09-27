@@ -2,34 +2,125 @@
 <html ng-app="App">
     <head>
         <title>
-            Andaman
+            Andaman Task
 
         </title>
+        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     </head>
-    <body ng-controller="mainCtrl">
-      <div class="panel panel-default" ng-repeat="info in data">
-        <div class="panel-body">
-            <img ng-src="{{info.image}}" class="img-responsive" style="width: 350px; height: 350px;"alt="">
-            <h1>Name: {{info.name}}</h1>
-            <h4>Provided: {{info.provided}}</h4>
-            <h5>Duration: {{info.duration}} hours</h5>
-            <h5>Time Slot: {{info.starttime}} am - {{info.endtime}} pm</h5>
-            <h5>Location: {{info.location}}</h5>
-            <h5>Price: {{info.price}} Rs</h5>
-            <h5>Includes : {{info.includes[0].tickets}}</h5>
-            <h5>{{info.includes[0].events}}</h5>
-            <h5>{{info.includes[0].duration}} hours</h5>
-            <h5>Excludes: {{info.excludes[0].lunch}}</h5>
-            <h5>Note: {{info.note}}</h5>
-            <button type="button" class="btn btn-success" name="button">Book Now</button>
+    <body >
+      <div class="col-md-3" >
+        <h1>LocalGDS</h1>
+        <div style="margin-top: 30%">
+          <ul class="list-group">
+            <li class="list-group-item">Dashboard</li>
+            <li class="list-group-item">Bookings</li>
+            <li class="list-group-item active">Products</li>
+            <li class="list-group-item">Reports</li>
+            <li class="list-group-item">Profle</li>
+          </ul>
+
+          <ul class="list-group">
+            <li class="list-group-item"><strong>Current Balance:</strong> <br> 1,21,456</li>
+          </ul>
+
+          <button type="button" class="btn btn-link" style="float: right;">Hide</button>
         </div>
 
       </div>
+      <div class="col-md-9 " ng-controller="mainCtrl">
+        <div class="" style="text-align: center; margin-bottom: 20px;">
+          <div class="dropdown">
+            <button class="btn btn-default search dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Select Activity
+              <span class="caret"></span>
+            </button>
+            <button class="btn btn-default search dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Location
+              <span class="caret"></span>
+            </button>
+            <button class="btn btn-default search dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Date
+              <span class="caret"></span>
+            </button>
+
+            <button type="button" class="btn btn-primary" name="button">Search</button>
+          </div>
+        </div>
+
+        <div class="panel panel-default" ng-repeat="info in data" >
+          <div class="panel-body">
+            <div class="col-md-4">
+              <img ng-src="{{info.image}}" class="img-responsive img-thumbnail pull-left" style="width: 100%; height: 250px;"alt="">
+            </div>
+
+              <div class="info col-md-6">
+                <h3>{{info.name}}</h3>
+                <p><strong>Provided by:</strong> {{info.provided}}</p>
+                <span><strong>Duration:</strong> {{info.duration}} hours</span> |
+                <span><strong>Time Slot:</strong> {{info.starttime}} am - {{info.endtime}} pm</span> |
+                <span><strong>Location:</strong> {{info.location}}</span>
+
+
+                <div class="row benifits">
+                  <div class="col-md-6" style="color: #23af69">
+                    <ul style="padding: 0px; ">
+                      <li class="includes"><strong>Includes: </strong></li>
+                      <li class="includes">{{info.includes[0].tickets}}</li>
+                      <li class="includes">{{info.includes[0].events}}</li>
+                      <li class="includes"><strong>Rose Island:</strong> {{info.includes[0].duration}} hours; <strong>North Bay:</strong> {{info.includes[0].duration}} hours</li>
+                    </ul>
+                  </div>
+
+                  <div class="col-md-6" style="color: #af2222;">
+                    <ul>
+                      <li class="includes"><strong>Excludes:</strong></li>
+                      <li class="includes">{{info.excludes[0].lunch}}</li>
+                    </ul>
+                  </div>
+
+                </div>
+
+                <h5 style="color: #ccc9c9;"><strong>Note:</strong> {{info.note}}</h5>
+              </div>
+
+              <div class="col-md-2">
+                <div >
+                  <ul>
+                    <li class="policy"><a>Cancellation Policy</a></li>
+                    <li class="policy"><a>About the Product</a></li>
+                    <li class="policy"><a>Pricing Details</a></li>
+                    <li class="policy"><a data-toggle="tooltip" data-placement="left" title="Children Below 10 Years are not allowed !!">Age Requirements </a></li>
+                  </ul>
+                  <div class="price">
+                    <h3  class="">Rs {{info.price}}</h3>
+                    <h5 ><strike>Rs {{info.originalPrice}}</strike> <span style="color: orange">Discount !</span></h5>
+                    <button ng-class="{btn-danger}" type="button" name="button">{{info.availability}}</button>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+
+          </div>
+
+        </div>
+      </div>
+
 
         <script src="https://code.angularjs.org/1.6.5/angular.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="app.js"></script>
+        <script type="text/javascript">
+
+        $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();
+        });
+        </script>
     </body>
 </html>
